@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V-Trip</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./app/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body style="bgwhite">
+    <div class="container-fluid py-3">
+      <div class="container position-relative">
+        <div
+          class="d-flex justify-content-between align-items-center bg-white p-3 animated-header"
+        >
+          <i
+            id="hamburgerIcon"
+            class="bi bi-list fs-3 fw-bold hover-icon"
+            style="cursor: pointer"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasMenu"
+            aria-controls="offcanvasMenu"
+          ></i>
+          <h4 class="mainheading m-0 text-center flex-grow-1 fade-in-heading">
+            V - Trip
+          </h4>
+          <i
+            class="bi bi-geo-alt-fill fs-3 hover-icon"
+            style="cursor: pointer"
+          ></i>
+        </div>
+        <div
+          class="offcanvas offcanvas-start bg-white"
+          tabindex="-1"
+          id="offcanvasMenu"
+        >
+          <div
+            class="offcanvas-body d-flex flex-column justify-content-between p-0"
+          >
+            <div class="px-3">
+              <a href="#"
+                ><img class="logo-img my-3" src="assets/favicon.png" alt
+              /></a>
+              <a
+                href="chat.html"
+                class="d-flex align-items-center py-2 text-decoration-none text-dark fw-bold menulink"
+              >
+                <i class="bi bi-airplane-engines me-4"></i>
+                New Trip
+              </a>
+              <small
+                class="text-muted mb-2 d-block lh-lg"
+                style="font-family: rubik"
+                >Trip</small
+              >
+              <ul class="list-group list-group-flush">
+                <a
+                  href="chat.html"
+                  style="font-family: Rubik"
+                  class="d-flex align-items-center py-2 text-decoration-none text-dark"
+                >
+                  Delhi to Mumbai Flight booki...
+                </a>
+                <li class="list-group-item py-2 px-0 border-0">
+                  <a href="#" class="text-dark text-decoration-none">
+                    Mumbai to Lucknow Bus Boo...</a
+                  >
+                </li>
+                <li class="list-group-item py-2 px-0 border-0">
+                  <a href="#" class="text-dark text-decoration-none">
+                    Delhi to Japan Trip plan with...</a
+                  >
+                </li>
+                <li class="list-group-item py-2 px-0 border-0">
+                  <a href="#" class="text-dark text-decoration-none">
+                    Amroha to Meerut Bus Trip p...</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="px-3 py-3 border-top d-flex align-items-center">
+              <a href="profile.html"
+                ><img
+                  src="./assets/9.png"
+                  width="36"
+                  height="36"
+                  class="rounded-circle me-2"
+              /></a>
+              <div
+                class="ms-2 fw-bold"
+                style="font-family: Rubik; font-size: 15px; font-weight: 700"
+              >
+                Shivam Thakur
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="chatArea"
+          class="mt-0 mb-5"
+          style="overflow-y: auto; margin-bottom: 24px"
+        >
+          <div class="text-start my-5">
+            <!-- Preloaded Static Chat -->
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                i want to book a flight
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                Hey there! 👋 Sure, I can help you with that. Can you please
+                tell me your departure city and destination?
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                i'm flying from delhi to mumbai
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                Great ✈️ Delhi to Mumbai. What's your preferred travel date?
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                15th june early morning
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                Found 3 good options for you:<br />
+                IndiGo – 06:10 AM – ₹4,499<br />
+                Air India – 07:30 AM – ₹4,950<br />
+                Akasa Air – 05:55 AM – ₹4,299
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                akasa air sounds good
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                Perfect! Akasa Air at 05:55 AM on 15th June.<br />
+                Awesome! I’ll just need a few quick details to book your
+                ticket.<br />
+                What’s your full name as per your ID?
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                rohan mehra
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                Got it, Rohan Mehra ✅<br />
+                And your gender?
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                male
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                Thanks! 👋<br />
+                Now your date of birth?
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                27 jan 2005
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                Perfect 👌<br />
+                Can you share your email so I can send your e-ticket?
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                shivamofficial2705@gmail.com
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                Perfect 👌<br />
+                Thanks! Last one — your mobile number for SMS alerts?
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                i’ll skip that
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                All set, Rohan! 🤝<br />
+                Do you have a Seat Preference:<br />
+                A) Window<br />
+                B) Aisle<br />
+                C) No preference
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                window
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                ✈️ Here’s a quick summary of your flight booking:<br />
+                👤 Passenger: Rohan Mehra<br />
+                📍 From: Delhi (DEL)<br />
+                📍 To: Mumbai (BOM)<br />
+                📅 Date: 15th June 2025 (Saturday)<br />
+                ⏰ Time: 05:55 AM<br />
+                🛫 Airline: Akasa Air<br />
+                🪟 Seat Preference: Window<br />
+                📧 Email: rohan.mehra@gmail.com<br />
+                💵 Total Fare: ₹4,299 (No convenience fee, taxes included)<br />
+                ✅ Ready to confirm and proceed with payment?
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                yes use my visa card
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                Awesome, Rohan! Proceeding with payment using your saved VISA
+                card ending in <strong>8723</strong> 💳<br />
+                Redirecting you to the secure payment page... 🧾<br />
+                Please complete the payment to confirm your flight booking.
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-2">
+              <div
+                class="px-3 py-2 rounded-4 chat-bubble bg-success text-white"
+                style="max-width: 80%; font-family: rubik"
+              >
+                payment confirmed
+              </div>
+            </div>
+            <div class="d-flex justify-content-start my-3">
+              <div
+                class="px-3 py-2 rounded-4 bg-light"
+                style="max-width: 80%; font-family: rubik"
+              >
+                Your flight has been successfully booked, Rohan.<br />
+                Here are your final ticket details:<br />
+                📍 From: Delhi (DEL)<br />
+                📍 To: Mumbai (BOM)<br />
+                📅 Date: 15th June 2025<br />
+                ⏰ Time: 05:55 AM<br />
+                🛫 Airline: Akasa Air<br />
+                🪑 Seat: Window<br />
+                📧 E-ticket sent to: rohan.mehra@gmail.com<br />
+                🔖 Booking ID: VT-15JUN-ROH2341<br />
+                ✨ You’re all set!<br />
+                Would you like to:<br />
+                📲 Book a cab to the airport<br />
+                🔔 Set a reminder<br />
+                🔁 Add return flight<br />
+                🚫 Do nothing for now
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-bar">
+          <button class="mic-button" onclick="startVoice()">
+            <i class="bi bi-mic-fill"></i>
+            <span class="pulse-ring"></span>
+          </button>
+          <input
+            id="userInput"
+            type="text"
+            placeholder="Type your message..."
+            class="chat-input"
+          />
+          <button class="send-button" onclick="sendMessage()">
+            <i class="bi bi-send-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app/script.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </body>
+</html>

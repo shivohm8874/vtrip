@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  font-family: Rubik;
+  user-select: none; /* Disables text selection */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  pointer-events: none; /* Optional: disables all mouse interaction */
+}
+
+.text-heading {
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -1%;
+  color: white;
+  font-weight: 600;
+}
+.bgdark {
+  position: relative;
+  background-color: #161616; /* fallback bg */
+  height: 100vh;
+  overflow: hidden;
+}
+#app {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: #fefefe;
+}
+.bgdark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/bg.png") no-repeat center center;
+  background-size: cover;
+  opacity: 0.7;
+  z-index: 0;
+  animation: bgFloatFade 5s ease-in-out infinite;
+}
+
+@keyframes bgFloatFade {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.6;
+  }
+}
+
+.bgdark > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.ltsgobtn {
+  margin-bottom: 3em;
+  background: #fff;
+  border-radius: 100px;
+  padding: 17px 24px;
+  font-family: Rubik, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -1%;
+  width: 183px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.arrow-icon {
+  font-size: 22px;
+}
+
+@keyframes superBounceInButton {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.85);
+  }
+  40% {
+    transform: scale(1.15);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.ltsgobtn.clicked {
+  animation: superBounceInButton 0.6s ease;
+}
+.mainheading {
+  font-family: Rubik;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1%;
+}
+.animated-header {
+  animation: slideDown 0.5s ease-out;
+}
+
+.fade-in-heading {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.hover-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hover-icon:hover {
+  transform: scale(1.2);
+  color: #007bff;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.gptmessage {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -1%;
+  line-height: 118.8%;
+}
+.hamburgerIcon {
+  font-weight: bold;
+}
+.typing-dots span {
+  animation: blink 1.5s infinite;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0 2px;
+  color: #999;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%,
+  20% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+.logo-img {
+  width: 42px;
+}
+.menulink {
+  padding: 22px 5px;
+  text-decoration: none;
+  background: #fff;
+  font-family: Rubik;
+  font-size: 18px;
+  line-height: 2em;
+}
+.menulink:hover {
+  background: #f8f8f5;
+}
+#offcanvasMenu {
+  width: 260px;
+}
+.list-group-item {
+  font-family: Rubik;
+}
+#loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: #1A1A1A;
+  transition: opacity 0.6s ease;
+  font-family: "RUBIK", sans-serif;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #fff;
+  border-top: 4px solid #1A1A1A;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.chat-input-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 999;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: #f3f4f6;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.chat-input:focus {
+  background: #e8f0fe;
+  box-shadow: 0 0 0 2px #007bff25;
+}
+
+.send-button,
+.mic-button {
+  position: relative;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+}
+
+.send-button:hover,
+.mic-button:hover {
+  transform: scale(1.05);
+  background-color: #000;
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(0, 123, 255, 0.25);
+  animation: pulse 1.5s infinite ease-out;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Animation for chat bubbles */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.chat-bubble {
+  animation: fadeInUp 0.35s ease;
+}
+
+/* Typing dots animation */
+.typing-dots span {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 20px;
+  animation: blink 1.3s infinite;
+}
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes blink {
+  0%, 80%, 100% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+/* Mic active pulse */
+.mic-active {
+  animation: micPulse 1s infinite;
+  color: red !important;
+}
+@keyframes micPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}

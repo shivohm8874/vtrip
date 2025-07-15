@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V-Trip</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../app/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body style="bgwhite">
+    <div class="container-fluid py-3">
+      <div class="container position-relative">
+        <div
+          class="d-flex justify-content-between align-items-center bg-white p-3 animated-header"
+        >
+          <i
+            id="hamburgerIcon"
+            class="bi bi-list fs-3 fw-bold hover-icon"
+            style="cursor: pointer"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasMenu"
+            aria-controls="offcanvasMenu"
+          ></i>
+          <h4 class="mainheading m-0 text-center flex-grow-1 fade-in-heading">
+            V - Trip
+          </h4>
+          <i
+            class="bi bi-geo-alt-fill fs-3 hover-icon"
+            style="cursor: pointer"
+          ></i>
+        </div>
+        <div
+          class="offcanvas offcanvas-start bg-white"
+          tabindex="-1"
+          id="offcanvasMenu"
+        >
+          <div
+            class="offcanvas-body d-flex flex-column justify-content-between p-0"
+          >
+            <div class="px-3">
+              <a href="#"
+                ><img class="logo-img my-3" src="../assets/favicon.png" alt
+              /></a>
+              <a
+                href="../chat.html"
+                class="d-flex align-items-center py-2 text-decoration-none text-dark fw-bold menulink"
+              >
+                <i class="bi bi-airplane-engines me-4"></i>
+                New Trip
+              </a>
+              <small
+                class="text-muted mb-2 d-block lh-lg"
+                style="font-family: rubik"
+                >Trip</small
+              >
+              <ul class="list-group list-group-flush">
+                <a
+                  href="../travels/delhi-mumbai.html"
+                  style="font-family: Rubik"
+                  class="d-flex align-items-center py-2 text-decoration-none text-dark"
+                >
+                  Delhi to Mumbai Flight booki...
+                </a>
+                <li class="list-group-item py-2 px-0 border-0">
+                  <a href="../travels/mumbai-lucknow.html" class="text-dark text-decoration-none">
+                    Mumbai to Lucknow Bus Boo...</a
+                  >
+                </li>
+                <li class="list-group-item py-2 px-0 border-0">
+                  <a href="../travels/delhi-japan.html" class="text-dark text-decoration-none">
+                    Delhi to Japan Trip plan with...</a
+                  >
+                </li>
+                <li class="list-group-item py-2 px-0 border-0">
+                  <a href="../travels/amroha-meerut.html" class="text-dark text-decoration-none">
+                    Amroha to Meerut Bus Trip p...</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="px-3 py-3 border-top d-flex align-items-center">
+              <a href="../profile.html"
+                ><img
+                  src="../assets/9.png"
+                  width="36"
+                  height="36"
+                  class="rounded-circle me-2"
+              /></a>
+              <div
+                class="ms-2 fw-bold"
+                style="font-family: Rubik; font-size: 15px; font-weight: 700"
+              >
+                Shivam Thakur
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="chatArea"
+          class="mt-0 mb-5"
+          style="overflow-y: auto; margin-bottom: 24px"
+        >
+          <div class="text-start my-5"><div class="d-flex justify-content-end mb-2">
+  <div class="px-3 py-2 rounded-4 chat-bubble bg-success text-white">
+    I want to book a bus from Amroha to Meerut
+  </div>
+</div>
+<div class="d-flex justify-content-start my-3">
+  <div class="px-3 py-2 rounded-4 bg-light">
+    Sure! 🚌 Would you prefer: <br>
+    A) Volvo AC <br>
+    B) Non‑AC Deluxe <br>
+    C) Ordinary
+  </div>
+</div>
+<div class="d-flex justify-content-end mb-2">
+  <div class="px-3 py-2 rounded-4 chat-bubble bg-success text-white">
+    Let’s go with Volvo AC
+  </div>
+</div>
+<div class="d-flex justify-content-start my-3">
+  <div class="px-3 py-2 rounded-4 bg-light">
+    Great choice! Volvo AC—here are available options:<br>
+    1. 06:00 AM – Volvo AC – ₹450 – 3h 30m<br>
+    2. 12:30 PM – Volvo AC – ₹475 – 3h 15m<br>
+    3. 05:00 PM – Volvo AC – ₹500 – 3h 00m<br>
+    Which timing works best?
+  </div>
+</div>
+<div class="d-flex justify-content-end mb-2">
+  <div class="px-3 py-2 rounded-4 chat-bubble bg-success text-white">
+    05:00 PM please
+  </div>
+</div>
+<div class="d-flex justify-content-start my-3">
+  <div class="px-3 py-2 rounded-4 bg-light">
+    Perfect — 5:00 PM departure, arrival 8:00 PM.<br>
+    Seat preference?<br>
+    A) Window<br>
+    B) Aisle<br>
+    C) No preference
+  </div>
+</div>
+<div class="d-flex justify-content-end mb-2">
+  <div class="px-3 py-2 rounded-4 chat-bubble bg-success text-white">
+    Window seat please
+  </div>
+</div>
+<div class="d-flex justify-content-start my-3">
+  <div class="px-3 py-2 rounded-4 bg-light">
+    Got it — window seat booked! 💺<br>
+    Would you like a snack + water pack for ₹75?
+  </div>
+</div>
+<div class="d-flex justify-content-end mb-2">
+  <div class="px-3 py-2 rounded-4 chat-bubble bg-success text-white">
+    Yes, add snack pack
+  </div>
+</div>
+<div class="d-flex justify-content-start my-3">
+  <div class="px-3 py-2 rounded-4 bg-light">
+    Excellent! Snack + water added.<br>
+    🧭 Trip summary:<br>
+    • Route: Amroha → Meerut<br>
+    • Bus: Volvo AC<br>
+    • Depart: 5:00 PM | Arrive: 8:00 PM<br>
+    • Seat: Window<br>
+    • Add‑ons: Snack pack<br>
+    • Fare: ₹575 (incl. add‑on & GST)<br><br>
+    Confirm and proceed with payment?
+  </div>
+</div>
+<div class="d-flex justify-content-end mb-2">
+  <div class="px-3 py-2 rounded-4 chat-bubble bg-success text-white">
+    Confirmed, pay with UPI
+  </div>
+</div>
+<div class="d-flex justify-content-start my-3">
+  <div class="px-3 py-2 rounded-4 bg-light">
+    ✅ Payment link sent for UPI.<br>
+    Tap when ready. Would you like live bus tracking and reminder 30 min before departure?
+  </div>
+</div>
+<div class="d-flex justify-content-end mb-2">
+  <div class="px-3 py-2 rounded-4 chat-bubble bg-success text-white">
+    Yes please
+  </div>
+</div>
+<div class="d-flex justify-content-start my-3">
+  <div class="px-3 py-2 rounded-4 bg-light">
+    ✔️ Live tracking enabled.<br>
+    ⏰ Reminder set for 4:30 PM.<br><br>
+    Here’s your Booking ID: **BT‑AMR05JUN‑XYZ123**<br>
+    Bus: Volvo AC, Window seat<br>
+    Snack pack included<br>
+    Arrival ETA: 8:00 PM<br><br>
+    Safe travels! Do you want nearby cab or hotel suggestions on arrival?
+  </div>
+</div>
+</div>
+        </div>
+        <div class="chat-input-bar">
+          <button class="mic-button" onclick="startVoice()">
+            <i class="bi bi-mic-fill"></i>
+            <span class="pulse-ring"></span>
+          </button>
+          <input
+            id="userInput"
+            type="text"
+            placeholder="Type your message..."
+            class="chat-input"
+          />
+          <button class="send-button" onclick="sendMessage()">
+            <i class="bi bi-send-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+   <script src="../app/chat.js"></script>
+    <script src="../app/script.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>V-Trip</title>
+      <link rel="icon" type="image/png" href="./assets/favicon.png" />
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         />
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+         rel="stylesheet"
+         />
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+         crossorigin="anonymous"
+         />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+         rel="stylesheet"
+         />
+      <link rel="stylesheet" href="./app/style.css" />
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+         />
+   </head>
+   <body style="bgwhite">
+      <div id="loadingScreen">
+         <div class="loader"></div>
+         <p>Loading...</p>
+      </div>
+      <div class="container-fluid py-3">
+         <div class="container position-relative">
+            <div
+               class="d-flex justify-content-between align-items-center bg-white p-3 animated-header"
+               >
+               <i
+                  id="hamburgerIcon"
+                  class="bi bi-list fs-3 fw-bold hover-icon"
+                  style="cursor: pointer"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasMenu"
+                  aria-controls="offcanvasMenu"
+                  ></i>
+               <h4 class="mainheading m-0 text-center flex-grow-1 fade-in-heading">
+                  V - Trip
+               </h4>
+               <i
+                  class="bi bi-geo-alt-fill fs-3 hover-icon"
+                  style="cursor: pointer"
+                  ></i>
+            </div>
+            <div
+               class="offcanvas offcanvas-start bg-white"
+               tabindex="-1"
+               id="offcanvasMenu"
+               >
+               <div
+                  class="offcanvas-body d-flex flex-column justify-content-between p-0"
+                  >
+                  <div class="px-3">
+                     <a href="#"
+                        ><img class="logo-img my-3" src="assets/favicon.png" alt
+                        /></a>
+                     <a
+                        href="chat.html"
+                        class="d-flex align-items-center py-2 text-decoration-none text-dark fw-bold menulink"
+                        >
+                     <i class="bi bi-airplane-engines me-4"></i>
+                     New Trip
+                     </a>
+                     <small
+                        class="text-muted mb-2 d-block lh-lg"
+                        style="font-family: rubik"
+                        >Trip</small
+                        >
+                     <ul class="list-group list-group-flush">
+                        <a
+                           href="./travels/delhi-mumbai.html"
+                           style="font-family: Rubik"
+                           class="d-flex align-items-center py-2 text-decoration-none text-dark"
+                           >
+                        Delhi to Mumbai Flight booki...
+                        </a>
+                        <li class="list-group-item py-2 px-0 border-0">
+                           <a href="./travels/mumbai-lucknow.html" class="text-dark text-decoration-none">
+                           Mumbai to Lucknow Bus Boo...</a
+                              >
+                        </li>
+                        <li class="list-group-item py-2 px-0 border-0">
+                           <a href="./travels/delhi-japan.html" class="text-dark text-decoration-none">
+                           Delhi to Japan Trip plan with...</a
+                              >
+                        </li>
+                        <li class="list-group-item py-2 px-0 border-0">
+                           <a href="./travels/amroha-meerut.html" class="text-dark text-decoration-none">
+                           Amroha to Meerut Bus Trip p...</a
+                              >
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="px-3 py-3 border-top d-flex align-items-center">
+                     <a href="profile.html"
+                        ><img
+                        src="./assets/9.png"
+                        width="36"
+                        height="36"
+                        class="rounded-circle me-2"
+                        /></a>
+                     <div
+                        class="ms-2 fw-bold"
+                        style="font-family: Rubik; font-size: 15px; font-weight: 700"
+                        >
+                        Shivam Thakur
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div
+               id="chatArea"
+               style="overflow-y: auto; "
+               >
+               <div class="text-center my-5">
+                  <h4 class="gptmessage">
+                     Tell me where, and I’ll take<br />you there.
+                  </h4>
+               </div>
+            </div>
+            <div class="chat-input-bar">
+               <button class="mic-button" onclick="startVoice()">
+               <i class="bi bi-mic-fill"></i>
+               <span class="pulse-ring"></span>
+               </button>
+               <input
+                  id="userInput"
+                  type="text"
+                  placeholder="Type your message..."
+                  class="chat-input"
+                  />
+               <button class="send-button" onclick="sendMessage()">
+               <i class="bi bi-send-fill"></i>
+               </button>
+            </div>
+         </div>
+      </div>
+      <!-- Payment Modal -->
+      <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+               <div class="modal-body py-5">
+                  <div id="paymentProcessing">
+                     <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Processing...</span>
+                     </div>
+                     <p class="mt-3 mb-0">Processing Payment...</p>
+                  </div>
+                  <div id="paymentSuccess" style="display: none;">
+                     <i class="bi bi-check-circle-fill text-success fs-1"></i>
+                     <p class="mt-3 mb-0">Payment Successful!</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Sound -->
+      <audio id="successSound" src="./assets/success.mp3" preload="auto"></audio>
+      <script id="qaData" type="application/json">
+         [
+           {
+             "questions": [
+               "i want to book a flight", "book a flight", "flight booking", "book ticket",
+               "मुझे फ्लाइट बुक करनी है", "फ्लाइट बुक करो", "टिकट बुक करो", "मैं यात्रा करना चाहता हूँ",
+               "माझं फ्लाइट बुक करायचं आहे", "फ्लाइट बुक कर", "टिकट बुक कर", "माझं ट्रॅव्हल बुक कर"
+             ],
+             "answer": "Hey there! 👋 Sure, I can help you with that. Can you please tell me your departure city and destination?"
+           },
+           {
+             "questions": [
+               "i'm flying from delhi to mumbai", "delhi to mumbai flight", "my journey is from delhi to mumbai",
+               "मैं दिल्ली से मुंबई जा रहा हूँ", "दिल्ली से मुंबई की फ्लाइट", "दिल्ली से मुंबई यात्रा",
+               "मी दिल्लीहून मुंबईला जात आहे", "दिल्ली ते मुंबई फ्लाइट", "माझी यात्रा दिल्ली ते मुंबई"
+             ],
+             "answer": "Great ✈️ Delhi to Mumbai. What's your preferred travel date?"
+           },
+           {
+             "questions": [
+               "15th june early morning", "15 june morning", "15th june",
+               "15 जून सुबह", "15 जून की फ्लाइट", "15 जून",
+               "१५ जून सकाळी", "१५ जून", "१५ जूनची फ्लाइट"
+             ],
+             "answer": "Found 3 good options for you:\nIndiGo – 06:10 AM – ₹4,499\nAir India – 07:30 AM – ₹4,950\nAkasa Air – 05:55 AM – ₹4,299"
+           },
+           {
+             "questions": [
+               "akasa air sounds good", "akasa air is fine", "choose akasa",
+               "अकासा एयर सही है", "अकासा एयर चलेगा", "अकासा एयर चुनो",
+               "अकासा एअर ठीक आहे", "अकासा चालेल", "अकासा निवडा"
+             ],
+             "answer": "Perfect! Akasa Air at 05:55 AM on 15th June.\nAwesome! I’ll just need a few quick details to book your ticket.\nWhat’s your full name as per your ID?"
+           },
+           {
+             "questions": [
+               "rohan mehra", "रोहन मेहरा", "रोहन", "माझं नाव रोहन मेहरा आहे"
+             ],
+             "answer": "Got it, Rohan Mehra ✅\nAnd your gender?"
+           },
+           {
+             "questions": [
+               "male", "i am male", "पुरुष", "मैं पुरुष हूँ", "मी पुरुष आहे"
+             ],
+             "answer": "Thanks! 👋\nNow your date of birth?"
+           },
+           {
+             "questions": [
+               "27 jan 2005", "27 january 2005", "27 जनवरी 2005", "२७ जानेवारी २००५"
+             ],
+             "answer": "Perfect 👌\nCan you share your email so I can send your e-ticket?"
+           },
+           {
+             "questions": [
+               "shivamofficial2705@gmail.com", "shivamofficial2705 एट gmail डॉट कॉम", "shivamofficial2705@जीमेल.कॉम"
+             ],
+             "answer": "Perfect 👌\nThanks! Last one — your mobile number for SMS alerts?"
+           },
+           {
+             "questions": [
+               "i’ll skip that", "skip number", "no mobile",
+               "नहीं देना", "नंबर नहीं देना", "मोबाइल नहीं है",
+               "नको", "नंबर देणार नाही", "मोबाइल नाही"
+             ],
+             "answer": "All set, Rohan! 🤝\nDo you have a Seat Preference:\nA) Window\nB) Aisle\nC) No preference"
+           },
+           {
+             "questions": [
+               "window", "window please", "i want window seat",
+               "विंडो सीट", "मुझे विंडो सीट चाहिए", "विंडो सीट दो",
+               "मला विंडो सीट हवी आहे", "विंडो सीट हवी"
+             ],
+             "answer": "✈️ Here’s a quick summary of your flight booking:\n👤 Passenger: Rohan Mehra\n📍 From: Delhi (DEL)\n📍 To: Mumbai (BOM)\n📅 Date: 15th June 2025 (Saturday)\n⏰ Time: 05:55 AM\n🛫 Airline: Akasa Air\n🪟 Seat Preference: Window\n📧 Email: rohan.mehra@gmail.com\n💵 Total Fare: ₹4,299 (No convenience fee, taxes included)\n✅ Ready to confirm and proceed with payment?"
+           },
+           {
+             "questions": [
+               "yes use my visa card", "yes pay with visa", "proceed with visa",
+               "हां वीज़ा कार्ड से भुगतान करें", "वीज़ा कार्ड इस्तेमाल करो", "वीज़ा से पेमेंट करो",
+               "हो, व्हिसा कार्ड वापरा", "व्हिसा कार्डने पेमेंट करा"
+             ],
+             "answer": "Awesome, Rohan! Proceeding with payment using your saved VISA card ending in **8723** 💳\nRedirecting you to the secure payment page... 🧾\nPlease complete the payment to confirm your flight booking."
+           },
+           {
+             "questions": [
+               "payment confirmed", "booking done", "yes it's booked",
+               "भुगतान हो गया", "बुकिंग हो गई", "हाँ बुक हो गया",
+               "पेमेंट झाला", "बुकिंग पूर्ण", "हो, बुक झाले"
+             ],
+             "answer": "Your flight has been successfully booked, Rohan.\nHere are your final ticket details:\n📍 From: Delhi (DEL)\n📍 To: Mumbai (BOM)\n📅 Date: 15th June 2025\n⏰ Time: 05:55 AM\n🛫 Airline: Akasa Air\n🪑 Seat: Window\n📧 E-ticket sent to: rohan.mehra@gmail.com\n🔖 Booking ID: VT-15JUN-ROH2341\n✨ You’re all set!\nWould you like to:\n📲 Book a cab to the airport\n🔔 Set a reminder\n🔁 Add return flight\n🚫 Do nothing for now"
+           },
+           {
+             "questions": [
+               "what's the cheapest flight", "lowest fare", "best deal",
+               "सबसे सस्ती फ्लाइट", "सस्ता किराया", "बेस्ट डील",
+               "स्वस्त फ्लाइट", "स्वस्त भाडं", "बेस्ट ऑफर"
+             ],
+             "answer": "🛫 The cheapest flight currently available is Akasa Air at ₹4,299 for 15th June, departing 05:55 AM. Want to proceed?"
+           },
+           {
+             "questions": [
+               "can you book hotel", "i need a hotel", "book hotel",
+               "होटल बुक करो", "मुझे होटल चाहिए", "होटल चाहिए",
+               "हॉटेल बुक कर", "मला हॉटेल पाहिजे", "हॉटेल शोध"
+             ],
+             "answer": "🏨 Sure! I can assist with hotels too. Please tell me your city and check-in date."
+           },
+           {
+             "questions": [
+               "cab to airport", "book cab", "taxi to airport",
+               "कैब बुक करो", "एयरपोर्ट के लिए टैक्सी", "कैब चाहिए",
+               "कॅब बुक कर", "टॅक्सी पाहिजे", "एअरपोर्टसाठी कॅब"
+             ],
+             "answer": "🚖 Got it! I’ll check available cabs near your location. Please confirm your pickup address."
+           },
+           {
+             "questions": [
+               "cancel flight", "i want to cancel", "cancel ticket",
+               "फ्लाइट रद्द करो", "टिकट कैंसिल करो", "रद्द करना है",
+               "फ्लाइट रद्द कर", "टिकट कॅन्सल कर", "रद्द करायचं आहे"
+             ],
+             "answer": "⚠️ Please confirm: Do you really want to cancel your booking? Cancellation charges may apply."
+           }
+         ]
+         
+      </script>
+      <!-- Payment Modal -->
+<audio id="successSound" src="../assets/success.mp3" preload="auto"></audio>
+
+<div class="modal fade" id="paymentModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <div id="paymentProcessing">
+        <h5>🔄 Processing Payment...</h5>
+      </div>
+      <div id="paymentSuccess" style="display: none;">
+        <h5 class="text-success">✅ Payment Successful!</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+      <script src="./app/chat.js"></script>
+      <script src="./app/script.js"></script>
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         />
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+         rel="stylesheet"
+         />
+   </body>
+</html>
